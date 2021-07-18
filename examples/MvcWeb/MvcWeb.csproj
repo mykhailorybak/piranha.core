@@ -3,11 +3,8 @@
     <TargetFramework>net5.0</TargetFramework>
     <NoWarn>$(NoWarn);1591</NoWarn>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <UserSecretsId>252acb13-31a8-4024-99b0-5025f1fc6956</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\core\Piranha\Piranha.csproj" />

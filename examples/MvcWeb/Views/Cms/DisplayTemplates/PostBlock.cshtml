@@ -1,0 +1,51 @@
+﻿@model Piranha.Extend.Blocks.PostBlock
+@{
+    ViewBag.Title = Model.Body.Post.Title;
+
+    Func<string> BlogLink = () =>
+    {
+        return Model.Body.Post.Permalink
+            + (Model.Body.Post.Category != null ? $"/category/{Model.Body.Post.Category.Slug}" : "");
+    };
+
+    ViewBag.isSlider = ViewData["isSlider"];
+}
+
+@if (ViewBag.isSlider == true)
+{
+    <div class="card bg-dark text-white">
+        @if (Model.Body.Post.PrimaryImage.HasValue)
+        {
+            <img class="card-img" src="@Url.Content(Model.Body.Post.PrimaryImage)" alt="">
+        }
+        <div class="card-img-overlay" style="top: 150px;
+        background-color: rgba(105,105,105, 0.4)">
+            <h3 class="card-title"><a style="color: inherit; text-decoration: inherit;" href="@Model.Body.Post.Permalink">@Model.Body.Post.Title</a></h3>
+            <p class="card-text">@Model.Body.Post.Excerpt</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="card">
+        @if (Model.Body.Post.PrimaryImage.HasValue)
+        {
+            <img class="card-img-top" src="@Url.Content(Model.Body.Post.PrimaryImage)" alt="">
+        }
+        <div class="card-body">
+            <h4 class="card-title"><a style="color: inherit; text-decoration: inherit;" href="@Model.Body.Post.Permalink">@Model.Body.Post.Title</a></h4>
+            <p class="small">
+                Published:
+                @if (Model.Body.Post.Published.HasValue)
+                {
+                    <text>@Model.Body.Post.Published.Value.ToString("yyyy-MM-dd")</text>
+                }
+                else
+                {
+                    <span class="label label-info">Unpublished</span>
+                }
+            </p>
+            <p class="card-text">@Model.Body.Post.Excerpt</p>
+        </div>
+    </div>
+}

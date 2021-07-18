@@ -1,0 +1,10 @@
+﻿@model Piranha.Extend.Blocks.SliderBlock
+
+<div class="center">
+    @for (var n = 0; n < Model.Items.Count; n++)
+    {
+        <div class="slick-slide" style="width: 464px;">
+            @Html.DisplayFor(m => Model.Items[n], Model.Items[n].GetType().Name, new {isSlider = true })
+        </div>
+    }
+</div>

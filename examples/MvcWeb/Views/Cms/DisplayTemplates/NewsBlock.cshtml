@@ -1,0 +1,63 @@
+﻿@model Piranha.Extend.Blocks.NewsBlock
+
+<div class="row card-group">
+    @if (Model.Items.Count >= 1)
+    {
+        <div class="col-md-6">
+            @Html.DisplayFor(m => Model.Items[0], Model.Items[0].GetType().Name)
+        </div>
+    }
+    @if (Model.Items.Count >= 5)
+    {
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    @for (var n = 1; n < 3; n++)
+                    {
+                        <div class="col">
+                            @Html.DisplayFor(m => Model.Items[n], Model.Items[n].GetType().Name)
+                        </div>
+                    }
+                </div>
+                <div class="col-md-6">
+                    @for (var n = 3; n < 5; n++)
+                    {
+                        <div class="col">
+                            @Html.DisplayFor(m => Model.Items[n], Model.Items[n].GetType().Name)
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@*<div class="row columns block">
+        @if (Model.Items.Count >= 1)
+        {
+            <div class="col">
+
+            </div>
+        }
+        @if (Model.Items.Count >= 5)
+        {
+            <div class="col">
+                <div class="row" style="padding: 0px 15px;">
+                    @for (var n = 1; n < 3; n++)
+                    {
+                        <div class="col">
+                            @Html.DisplayFor(m => Model.Items[n], Model.Items[n].GetType().Name)
+                        </div>
+                    }
+                </div>
+                <div class="row" style="padding: 0px 15px;">
+                    @for (var n = 3; n < 5; n++)
+                    {
+                        <div class="col">
+                            @Html.DisplayFor(m => Model.Items[n], Model.Items[n].GetType().Name)
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>*@

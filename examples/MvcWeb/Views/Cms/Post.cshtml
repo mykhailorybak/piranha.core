@@ -11,7 +11,7 @@
             <p class="small">Published:
                 @if (Model.Published.HasValue)
                 {
-                    <text>@Model.Published.Value.ToString("yyyy-MM-dd") in <a href="~/blog/category/@Model.Category.Slug">@Model.Category.Title</a> by <a href="https://twitter.com/tidyui" target="_blank">Håkan Edling</a></text>
+                    <text>@Model.Published.Value.ToString("yyyy-MM-dd") in <a href="~/blog/category/@Model.Category.Slug">@Model.Category.Title</a></text>
                 }
                 else
                 {
