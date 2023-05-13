@@ -5,6 +5,14 @@
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <UserSecretsId>252acb13-31a8-4024-99b0-5025f1fc6956</UserSecretsId>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\assets\img\facebook.png" />
+    <Content Remove="wwwroot\assets\img\logo-nav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\assets\img\facebook.png" />
+    <None Include="wwwroot\assets\img\logo-nav.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\core\Piranha\Piranha.csproj" />
@@ -15,7 +23,9 @@
     <ProjectReference Include="..\..\core\Piranha.Manager\Piranha.Manager.csproj" />
     <ProjectReference Include="..\..\core\Piranha.Manager.TinyMCE\Piranha.Manager.TinyMCE.csproj" />
     <ProjectReference Include="..\..\core\Piranha.WebApi\Piranha.WebApi.csproj" />
+    <ProjectReference Include="..\..\data\Piranha.Data.EF.PostgreSql\Piranha.Data.EF.PostgreSql.csproj" />
     <ProjectReference Include="..\..\data\Piranha.Data.EF.SQLite\Piranha.Data.EF.SQLite.csproj" />
+    <ProjectReference Include="..\..\identity\Piranha.AspNetCore.Identity.PostgreSQL\Piranha.AspNetCore.Identity.PostgreSQL.csproj" />
     <ProjectReference Include="..\..\identity\Piranha.AspNetCore.Identity.SQLite\Piranha.AspNetCore.Identity.SQLite.csproj" />
   </ItemGroup>
 </Project>

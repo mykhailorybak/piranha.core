@@ -18,6 +18,8 @@ using Piranha.Data.EF.SQLite;
 using Piranha.AspNetCore.Identity.SQLite;
 using Piranha.AttributeBuilder;
 using Piranha.Local;
+using Piranha.Data.EF.PostgreSql;
+using Piranha.AspNetCore.Identity.PostgreSQL;
 
 namespace MvcWeb
 {
@@ -37,10 +39,10 @@ namespace MvcWeb
                 options.UseTinyMCE();
                 options.UseMemoryCache();
 
-                options.UseEF<SQLiteDb>(db =>
-                    db.UseSqlite("Filename=./piranha.mvcweb.db"));
-                options.UseIdentityWithSeed<IdentitySQLiteDb>(db =>
-                    db.UseSqlite("Filename=./piranha.mvcweb.db"));
+                options.UseEF<PostgreSqlDb>(db =>
+                    db.UseNpgsql("Server=polinard-database-do-user-9483050-0.b.db.ondigitalocean.com;Port=25060;Database=defaultdb;User ID=doadmin;Password=AVNS_B6Ui_1NtLJm5nNyusVo;SSL Mode=Require;Trust Server Certificate=true"));
+                options.UseIdentityWithSeed<IdentityPostgreSQLDb>(db =>
+                    db.UseNpgsql("Server=polinard-database-do-user-9483050-0.b.db.ondigitalocean.com;Port=25060;Database=defaultdb;User ID=doadmin;Password=AVNS_B6Ui_1NtLJm5nNyusVo;SSL Mode=Require;Trust Server Certificate=true"));
 
                 options.UseSecurity(o =>
                 {

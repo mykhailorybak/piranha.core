@@ -32,7 +32,7 @@ namespace Piranha.Data.EF.PostgreSql
         public PostgreSqlDb CreateDbContext(string[] args)
         {
             var builder = new DbContextOptionsBuilder<PostgreSqlDb>();
-            builder.UseNpgsql("Server=localhost;Port=5432;Database=piranha;User ID=piranha;Password=piranha;");
+            builder.UseNpgsql("Server=polinard-database-do-user-9483050-0.b.db.ondigitalocean.com;Port=25060;Database=defaultdb;User ID=doadmin;Password=AVNS_B6Ui_1NtLJm5nNyusVo;");
             return new PostgreSqlDb(builder.Options);
         }
     }
